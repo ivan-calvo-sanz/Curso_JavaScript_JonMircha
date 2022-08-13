@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funciones</title>
+</head>
+
+<body>
+
+    <script>
+
+        //Funcion delcaradas y Funciones expresadas
+        //FUNCION DECLARADA
+        function estoEsUnaFuncion() {
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+
+        //invocación de función
+        estoEsUnaFuncion();
+
+        function unaFuncionQueDevuelveValor() {
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+
+            return "La función ha retornado una cadena de texto";
+        }
+
+        let valorDeFuncion = unaFuncionQueDevuelveValor();
+        console.log(valorDeFuncion);
+
+        function unaFuncionQueDevuelveValor() {
+            console.log("Uno");
+            return 19;
+            console.log("Dos");
+            console.log("Tres");
+            return "La función ha retornado una cadena de texto";
+        }
+
+        let valorDeFuncion2 = unaFuncionQueDevuelveValor();
+        console.log(valorDeFuncion2);
+
+
+
+
+        function saludar(nombre, edad) {
+            console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
+        }
+
+        saludar("Ivan", 35);
+
+
+        function saludar2(nombre = "Desconocido", edad = 0) {
+            console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
+        }
+        saludar2();
+
+
+        funcionDeclarada();
+
+        //FUNCION DECLARADA
+        function funcionDeclarada() {
+            console.log("Esto es una función declarada," +
+                " puede invocarse en cualquier parte de nuestro código");
+        }
+
+        funcionDeclarada();
+
+
+        funcionExpresada();
+
+        //FUNCION EXPRESADA
+        const funcionExpresada = function () {
+            console.log("Esto es una función expresada")
+        }
+
+        //invocación de función
+        funcionExpresada();
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
