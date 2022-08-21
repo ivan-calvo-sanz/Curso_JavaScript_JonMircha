@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipos</title>
+</head>
+
+<body>
+
+    <script>
+        //Funcion Constructora donde asignamos los métodos
+        // al Prototipo, no a la función como tal
+        function Animal(nombre, genero) {
+            //Atributos
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        //Métodos agregados al prototipo de la Función Constructora
+        Animal.prototype.sonar = function () {
+            console.log("Hago sonidos porque estoy vivo");
+        }
+        Animal.prototype.saludar = function () {
+            console.log(`Hola me llamo ${this.nombre}`);
+        }
+
+        //Herencia Prototipica
+        function Perro(nombre, genero, tamanio) {
+            //indico que "Perro" va a heredar de "Animal"
+            this.super = Animal;
+            this.super(nombre, genero)
+            this.tamanio = tamanio;
+        }
+        //Hago la herencia, Perro hereda de Animal
+        //ahora Perro puede utilizar todos los métodos de Animal
+        Perro.prototype = new Animal();
+        Perro.prototype.constructor = Perro;
+
+        //Sobreescritura de métodos del Prototipo padre en el hijo
+        Perro.prototype.sonar = function () {
+            console.log("Soy un perro y mi sonido es un ladrido");
+        }
+
+        //Creo método exclusivo de Perro
+        Perro.prototype.ladrar = function () {
+            console.log("Guauuu Guauuu!!!");
+        }
+
+
+        const snoopy = new Animal("Snoopy", "Macho"),
+            lolaBunny = new Animal("Lola Bunny", "Hembra");
+
+        const flopy = new Perro("Flopy", "Macho", "Mediano");
+
+        console.log(snoopy);
+        console.log(lolaBunny);
+
+        snoopy.sonar();
+        snoopy.saludar();
+        lolaBunny.sonar();
+        lolaBunny.saludar();
+
+
+        console.log(flopy);
+
+        // Compruebo los métodos del Prototipo "Perro"
+        // Método "sonar()" que es sobreescrito del Prototipo "Animal"
+        flopy.sonar();
+        // Método "ladrar()" que es específico del Prototipo "Perro" 
+        flopy.ladrar();
+
+
+    </script>
+
+
+</body>
+
+</html>
