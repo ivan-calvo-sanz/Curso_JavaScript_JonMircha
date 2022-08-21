@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objetos</title>
+</head>
+
+<body>
+
+    <script>
+
+        const b = {
+
+        }
+        console.log(b);
+
+
+        const miPrimerObjeto = {
+            nombre: "Ivan",
+            apellido: "Calvo",
+            edad: 35,
+            pasatiempos: ["ciclismo", "correr", "futbol"],
+            soltero: false,
+            contacto: {
+                email: "ics@gmail.com",
+                twitter: "@ics",
+                movil: "587454705"
+            },
+            saludar: function () {
+                console.log(`Hola :)`)
+            },
+            decirMiNombre: function () {
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años`)
+            }
+        }
+
+        console.log(miPrimerObjeto);
+        console.log(miPrimerObjeto["nombre"]);
+        console.log(miPrimerObjeto["apellido"]);
+
+        console.log(miPrimerObjeto.edad);
+        console.log(miPrimerObjeto.pasatiempos[1]);
+        console.log(miPrimerObjeto.contacto.twitter);
+        miPrimerObjeto.saludar();
+        miPrimerObjeto.decirMiNombre();
+
+        console.log(Object.keys(miPrimerObjeto));
+        console.log(Object.values(miPrimerObjeto));
+
+        console.log(miPrimerObjeto.hasOwnProperty("nombre"));
+
+    </script>
+
+</body>
+
+</html>

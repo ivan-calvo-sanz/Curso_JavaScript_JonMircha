@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errores</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        try {
+            // se agrega el código a evaluar
+        } catch {
+            // captura cualquier error surgido 
+        } finally {
+            // se ejecuta siempre al final del bloque
+        }
+
+
+        try {
+            console.log("aquí va el código a evaluar");
+            console.log("segundo mensaje en el try");
+            variableNoExiste;
+        } catch (error) {
+            console.log("aquí se captura cualquier error surgido ");
+            console.log(error);
+        } finally {
+            console.log("El Bloque final siempre se ejecuta");
+        }
+
+
+        let num = "A";
+        try {
+            // isNaN método devuelve true si el parámtro que se le pasa NO es un número
+            if (isNaN(num)) {
+                throw new Error("El carcater introducido NO es un número");
+            }
+
+            console.log(num * num);
+        } catch (error) {
+            console.log(`Se produjo el siguiente error: ${error}`)
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

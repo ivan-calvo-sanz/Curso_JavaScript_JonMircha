@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parámetros REST</title>
+</head>
+
+<body>
+
+    <script>
+
+        //estamos seguros de que nos va a llegar al menos los parámetros "a" y "b"
+        // pero NO sabemos cuantos más parámetros nos van a llegar
+        // por ello se utiliza "...c" son los llamados Parámetros REST
+        function sumar(a, b, ...c) {
+            let resultado = a + b;
+            c.forEach(function (n) {
+                resultado += n;
+            });
+            return resultado;
+        }
+        console.log(sumar(1, 2));
+        console.log(sumar(1, 2, 3, 4, 5));
+        console.log(sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+
+
+        //ejemplo agregar a un array otro array
+        const arr1 = [1, 2, 3, 4, 5],
+            arr2 = [6, 7, 8, 9, 0];
+        console.log(arr1, arr2);
+
+        const arr3 = [...arr1, ...arr2];
+        console.log(arr3);
+
+
+    </script>
+
+</body>
+
+</html>

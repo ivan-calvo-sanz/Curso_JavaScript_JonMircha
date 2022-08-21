@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+
+    <script>
+
+        //FUNCION EXPRESADA
+        const saludar = function () {
+            console.log(`Hola`);
+        }
+
+        saludar();
+
+        //ARROW FUNCION
+        const saludar2 = () => {
+            console.log(`Hola`);
+        }
+
+        saludar2();
+
+        //ARROW FUNCION CON UNA SOLA LINEA DE CODIGO
+        const saludar3 = () => console.log(`Hola`);
+
+        saludar3();
+
+        //paso por parámetros
+        const saludar4 = (nombre) => console.log(`Hola ${nombre}`);
+
+        saludar4("Ivan");
+
+        //ARROW FUNCTION paso por parámetros sin parentesis
+        const saludar5 = nombre => console.log(`Hola ${nombre}`);
+
+        saludar5("Ivan");
+
+
+        //FUNCION EXPRESADA retorna valor
+        const sumar = function (a, b) {
+            return a + b;
+        }
+
+        console.log(sumar(8, 9));
+
+        //ARROW FUNCION retorna valor
+        const sumar_v2 = (a, b) => a + b;
+
+        console.log(sumar_v2(8, 9));
+
+
+        //FUNCION EXPRESADA
+        const funcionDeVarasLineas = function () {
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        };
+        //MEDIANTE de Arrow Function
+        const funcionDeVarasLineas_v2 = () => {
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        };
+        funcionDeVarasLineas();
+        funcionDeVarasLineas_v2();
+
+
+        const numeros = [1, 2, 3, 4, 5, 6];
+        //FUNCION EXPRESADA
+        numeros.forEach(function (el, index) {
+            console.log(`${el} posición ${index}`)
+        });
+        //MEDIANTE de Arrow Function
+        numeros.forEach((el, index) => {
+            console.log(`${el} posición ${index}`)
+        });
+        //al tener una sola linea de código, La Arrow Function se puede simplificar
+        //eliminado los {}
+        numeros.forEach((el, index) => console.log(`${el} posición ${index}`));
+
+    </script>
+
+
+
+    <script>
+        function Perro() {
+            console.log(this);
+        }
+        Perro();
+
+        const perro = {
+            nombre: "kenai",
+            ladrar: function () {
+                console.log(this)
+            }
+        }
+        perro.ladrar();
+
+        const perro_v2 = {
+            nombre: "kenai",
+            ladrar: () => {
+                console.log(this)
+            }
+        }
+        perro_v2.ladrar();
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
