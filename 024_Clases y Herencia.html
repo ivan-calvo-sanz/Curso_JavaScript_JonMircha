@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases y Herencia</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Animal {
+            /* 
+            el constructor es un método especial que se
+            ejecuta en el momento de instanciar la clase
+            */
+            constructor(nombre, genero) {
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+
+            //Metodos
+            sonar() {
+                console.log("Hago sonidos porque estoy vivo");
+            }
+
+            saludar() {
+                console.log(`Hola me llamo ${this.nombre}`);
+            }
+        }
+
+        class Perro extends Animal {
+            constructor(nombre, genero, tamanio) {
+                /*
+                con el método super() se manda a llamar el
+                constructor de la clase padre
+                */
+                super(nombre, genero);
+                this.tamanio = tamanio;
+            }
+
+            /*
+            Sobreescritura del Método sonar()
+            */
+            sonar() {
+                console.log("Soy un perro y mi sonido es un ladrido");
+            }
+
+            //Método específico de esta Clase
+            ladrar() {
+                console.log("Guauuu Guauuu!!!");
+            }
+        }
+
+        const mimi = new Animal("Mimi", "Hembra"),
+            scooby = new Animal("Scooby", "Macho");
+
+        console.log(mimi);
+        console.log(scooby);
+
+        mimi.sonar();
+        scooby.saludar();
+
+        const larry = new Perro("Larry", "Macho", "Gigante");
+        console.log(larry);
+
+
+
+    </script>
+
+
+</body>
+
+</html>
