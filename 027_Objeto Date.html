@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Date</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        let fecha = new Date();
+        console.log(fecha);
+
+        //dia del mes
+        console.log(fecha.getDate());
+
+        //dia de la semana D L M Mi J V S -> 0 1 2 3 4 5 6
+        console.log(fecha.getDay());
+
+        //mes -> 0 1 2 ... 11
+        console.log(fecha.getMonth());
+
+        //año
+        console.log(fecha.getFullYear());
+
+        //hora minutos segundos
+        console.log(fecha.getHours());
+        console.log(fecha.getMinutes());
+        console.log(fecha.getSeconds());
+        console.log(fecha.getMilliseconds());
+
+        console.log(fecha.toDateString());
+
+        console.log(fecha.toLocaleString());
+
+        console.log(fecha.toLocaleDateString());
+
+        console.log(fecha.toLocaleTimeString());
+
+        console.log(fecha.getTimezoneOffset());
+
+        console.log(fecha.getUTCDate());
+
+        console.log(Date.now());
+
+
+        //creo una fecha concreta
+        //Mayo es el mes 5 pero la posición 4 en el array
+        let cumpleJon = new Date(1984, 4, 23);
+        console.log(cumpleJon);
+        //convierto a "Time Stamp"
+        let cumpleJon_TimeStamp = (Date(cumpleJon));
+        console.log(cumpleJon_TimeStamp);
+
+        console.log(Date.now());
+        let anios_TimeStamp = cumpleJon_TimeStamp - Date.now();
+        console.log(anios_TimeStamp);
+
+        let anios = anios_TimeStamp / (60 * 60 * 24 * 365);
+        console.log(`Jon tiene ${anios} años`);
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
