@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIOS VIDEO 57</title>
+</head>
+
+<body>
+
+    <h1>EJERCICIOS VIDEO 57</h1>
+    <h1>ver consola</h1>
+    <script src="./ejercicio_57_1.js" type="module"></script>
+
+    <script>
+        console.log(this);
+        console.log(window);
+        console.log(this === window);
+    </script>
+
+
+    <script>
+        //this.nombre está introduciendo un nuevo atributo "nombre" al Objeto Window
+        this.nombre = "Contexto Global";
+        function imprimir() {
+            console.log(this.nombre);
+        }
+        imprimir();
+
+        //en este caso el this está dentro del Contexto del Objeto "obj"
+        const obj = {
+            nombre: "Contexto Objeto",
+            imprimir: function () {
+                console.log(this.nombre);
+            }
+        }
+        obj.imprimir();
+    </script>
+
+
+</body>
+
+</html>
