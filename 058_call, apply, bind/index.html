@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIOS VIDEO 58</title>
+</head>
+
+<body>
+
+    <h1>EJERCICIOS VIDEO 58</h1>
+    <h1>ver consola</h1>
+    <script src="./ejercicio_58_1.js" type="module"></script>
+
+    <script>
+        /*
+        //*** call ***
+        //imprimo por pantalla el Objeto en el que nos encontramos
+        console.log(this);
+        //genero un nuevo atributo dentro del Objeto 
+        this.lugar = "Contexto Global";
+        function saludar() {
+            console.log(`${this.lugar}`);
+        }
+        saludar();
+
+        const obj = {
+            lugar: "Contexto Objeto"
+        }
+        saludar.call(this);
+        //voy a llamar a saludar pero mediante call lo llamo en otro contexto
+        saludar.call(obj);
+        */
+    </script>
+    <script>
+        /*
+        //*** apply ***
+        function saludarV2(saludo, aQuien) {
+            console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+        }
+
+        const objV2 = {
+            lugar: "Contexto Objeto"
+        }
+
+        saludarV2.apply(this, ["Hola", "MirCha"]);
+        //voy a llamar a saludar pero mediante call lo llamo en otro contexto
+        saludarV2.apply(obj, ["Adios", "MirCha"]);
+   */
+    </script>
+
+    <script>
+        //*** utilizando this en Arrow Function ***
+        const persona = {
+            nombre: "Jon",
+            saludar: function () {
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+        //persona.saludar();
+
+        const personaV2 = {
+            nombre: "Jon",
+            saludar: () => {
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+        //personaV2.saludar();
+
+        //*** bind ***
+        //persona.saludar();
+        const personaV3 = {
+            nombre: "Jon",
+            saludar: function () {
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+        //personaV3.saludar();
+
+        this.nombre = "Window";
+        const otraPersona = {
+            saludar: persona.saludar.bind(this)
+        }
+        otraPersona.saludar();
+
+        //console.log("hola");
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
