@@ -1,0 +1,6 @@
+/*
+API
+*/
+
+
+console.log(document);
